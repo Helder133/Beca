@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Cliente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Editar Cliente</h1>
+    <form action="{{ url_for('actualizar_cliente', id=cliente.ClienteID) }}" method="post">
+        <input type="text" name="nombre" value="{{ cliente.Nombre }}" required>
+        <input type="email" name="email" value="{{ cliente.Email }}" required>
+        <input type="text" name="telefono" value="{{ cliente.Telefono }}" required>
+        <button type="submit">Actualizar</button>
+    </form>
+    <a href="{{ url_for('index') }}">Volver</a>
+</body>
+</html>
